@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>631-637 W 6th Street — Raw-Land Development Opportunity, San Pedro | Marcus &amp; Millichap</title>
+<meta name="description" content="Broker Opinion of Value for 631-637 W 6th Street, San Pedro CA 90731 — a ±13,799 SF raw-land assemblage of two C2-2D-CPIO parcels with two by-right development pathways: a double-duplex + ADU income build, or an SB 1123 for-sale subdivision.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;background:#f4f5f7;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  header{background:linear-gradient(135deg,#0a2540 0%,#143b6b 100%);color:#fff;padding:48px 0 56px;border-bottom:4px solid #b8985a}
+  header .wrap{position:relative}
+  .eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#b8985a;font-weight:600;margin-bottom:12px}
+  h1{font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:8px}
+  .sub{font-size:17px;color:#cbd5e1;font-weight:400}
+  .meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:24px;font-size:14px;color:#a8b3c2}
+  .meta div strong{display:block;color:#fff;font-size:15px;margin-bottom:2px}
+  main{padding:48px 0 64px}
+  section{background:#fff;border-radius:8px;padding:32px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,0.05),0 1px 2px rgba(0,0,0,0.03)}
+  h2{font-size:22px;font-weight:700;color:#0a2540;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #e6e9ef}
+  h3{font-size:16px;font-weight:600;color:#0a2540;margin:24px 0 12px;text-transform:uppercase;letter-spacing:0.5px}
+  p{margin-bottom:14px}
+  ul{margin-left:20px;margin-bottom:14px}
+  li{margin-bottom:8px}
+  .takeaways{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:8px}
+  .tk{background:#f8fafc;border-left:3px solid #b8985a;padding:16px 18px;border-radius:0 4px 4px 0}
+  .tk-num{font-size:11px;font-weight:700;color:#b8985a;letter-spacing:1.5px;margin-bottom:4px}
+  .tk-text{font-size:14px;line-height:1.5}
+  table{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:14px}
+  th{background:#0a2540;color:#fff;text-align:left;padding:11px 12px;font-weight:600;font-size:12px;letter-spacing:0.5px;text-transform:uppercase}
+  td{padding:12px;border-bottom:1px solid #e6e9ef;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:nth-child(even) td{background:#fafbfc}
+  .psf{font-weight:700;color:#0a2540}
+  .psf-hot{color:#a02020}
+  .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;letter-spacing:0.3px}
+  .b-closed{background:#e8f4ea;color:#1f6b35}
+  .b-pending{background:#fff4d6;color:#8a6500}
+  .b-active{background:#e6f0fb;color:#0a4a8a}
+  .recommend{background:linear-gradient(135deg,#fef9f0 0%,#fdf2dd 100%);border:1px solid #e6c98a;padding:24px;border-radius:6px;margin-top:8px}
+  .recommend h3{margin-top:0;color:#7a5f1a}
+  .price-band{font-size:30px;font-weight:700;color:#0a2540;margin:12px 0 4px;letter-spacing:-0.3px}
+  .price-band-sub{font-size:13px;color:#666}
+  .footer-note{font-size:12px;color:#666;margin-top:8px;font-style:italic}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .hero-img{margin:-32px -32px 24px;height:400px;background-size:cover;background-position:center;border-radius:8px 8px 0 0;position:relative}
+  .hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,37,64,0.35));border-radius:8px 8px 0 0}
+  .specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:16px 0 8px}
+  .spec{background:#f8fafc;padding:14px 16px;border-radius:5px;border-left:3px solid #b8985a}
+  .spec-label{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:0.8px;font-weight:600;margin-bottom:4px}
+  .spec-value{font-size:16px;color:#0a2540;font-weight:600;line-height:1.3}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:18px}
+  .gallery figure{margin:0}
+  .gallery img{width:100%;height:200px;object-fit:cover;border-radius:4px;display:block}
+  .gallery figcaption{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:0.6px;margin-top:5px;text-align:center}
+  .price-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .price-compare > div{padding:14px 16px;border-radius:5px;font-size:13px}
+  .price-current{background:#fbeaea;border-left:3px solid #a02020}
+  .price-rec{background:#e8f4ea;border-left:3px solid #1f6b35}
+  .price-compare .pc-label{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:0.8px;font-weight:600;margin-bottom:4px}
+  .price-compare .pc-value{font-size:18px;font-weight:700;color:#0a2540}
+  .price-compare .pc-sub{font-size:12px;color:#666;margin-top:2px}
+  .section-tag{display:inline-block;background:#f4ead0;color:#7a5f1a;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+  .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:16px 0 8px}
+  .stat-box{background:#0a2540;color:#fff;padding:18px;border-radius:6px;text-align:center}
+  .stat-num{font-size:24px;font-weight:700;color:#b8985a;margin-bottom:2px}
+  .stat-lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#a8b3c2}
+  #comp-map{height:420px;border-radius:6px;margin:16px 0;border:1px solid #e6e9ef;z-index:0}
+  .leaflet-popup-content{font-size:13px;line-height:1.5}
+  .leaflet-popup-content strong{color:#0a2540}
+  .pin-subject{background:#b8985a;color:#0a2540;border:3px solid #0a2540;width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,0.3)}
+  .pin-comp{background:#0a2540;color:#fff;border:2px solid #fff;width:32px;height:32px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,0.3)}
+  .pin-inner{transform:rotate(45deg);line-height:1}
+  .laaa-cta{text-align:center;margin-top:22px;padding-top:18px;border-top:1px solid #e6e9ef}
+  .math-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+  .math-card{background:#f8fafc;border:1px solid #e6e9ef;border-radius:6px;padding:22px;border-top:3px solid #0a4a8a}
+  .math-card.rent{border-top-color:#1f6b35}
+  .math-card h3{margin-top:0;font-size:14px;color:#0a2540}
+  .math-row{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dotted #d9dde4;font-size:13.5px}
+  .math-row:last-child{border-bottom:none}
+  .math-row.total{font-weight:700;color:#0a2540;border-top:2px solid #0a2540;border-bottom:none;margin-top:6px;padding-top:10px;font-size:15px}
+  .math-row.sub{color:#666;font-size:12px}
+  .scenario-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:10px 0}
+  .scenario{background:#fff;border:1px solid #e6e9ef;border-radius:5px;padding:10px;text-align:center}
+  .scenario .s-label{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px;font-weight:600}
+  .scenario .s-val{font-size:16px;color:#0a2540;font-weight:700}
+  .scenario .s-sub{font-size:11px;color:#666;margin-top:2px}
+  .team-leaders{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:18px;max-width:680px;margin-left:auto;margin-right:auto}
+  .team-card{background:#f8fafc;border:1px solid #e6e9ef;border-radius:6px;padding:22px;border-top:3px solid #b8985a;display:flex;flex-direction:column}
+  .tc-photo{text-align:center;margin-bottom:8px}
+  .headshot-img-lg{width:100px;height:100px;border-radius:50%;border:3px solid #b8985a;object-fit:cover;background:#0a2540;display:block;margin:0 auto 12px}
+  .tc-name-lg{font-size:18px;font-weight:700;color:#0a2540;text-align:center;margin-bottom:2px}
+  .tc-title-lg{font-size:11px;color:#b8985a;text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:14px;font-weight:600}
+  .tc-bio{font-size:13px;color:#444;line-height:1.55;margin-bottom:14px}
+  .tc-contact-lg{font-size:13px;color:#0a2540;text-align:center;padding-top:12px;border-top:1px solid #e6e9ef;line-height:1.7;margin-top:auto}
+  .tc-contact-lg a{color:#0a4a8a;text-decoration:none}
+  .tc-contact-lg a:hover{text-decoration:underline}
+  .sb-callout{background:linear-gradient(135deg,#0a2540 0%,#143b6b 100%);color:#fff;border-radius:8px;padding:24px 28px;margin:16px 0}
+  .sb-callout h3{color:#b8985a;margin-top:0;margin-bottom:10px}
+  .sb-callout p{color:#cbd5e1;margin-bottom:10px;font-size:14px}
+  .sb-callout strong{color:#fff}
+  .yield-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
+  .yield-item{background:#fff;color:#0a2540;border-radius:5px;padding:14px;text-align:center;border-top:3px solid #b8985a}
+  .yield-num{font-size:20px;font-weight:700;color:#0a2540;margin-bottom:2px}
+  .yield-lbl{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:0.8px}
+  .pathway-tag{display:inline-block;background:#0a2540;color:#b8985a;font-size:11px;font-weight:700;letter-spacing:1.2px;padding:4px 12px;border-radius:11px;text-transform:uppercase;margin-bottom:8px}
+  .pathway-tag.b{background:#0a4a8a;color:#fff}
+  .tbd{display:inline-block;background:#fff4d6;color:#8a6500;border:1px dashed #d9b84a;border-radius:3px;padding:0 6px;font-style:italic;font-size:12px;font-weight:600;letter-spacing:0.2px}
+  .needs-input{background:#fff9ec;border:1px solid #e6c98a;border-left:4px solid #b8985a;border-radius:6px;padding:13px 16px;margin:14px 0;font-size:12.5px;color:#7a5f1a;line-height:1.5}
+  .needs-input strong{color:#7a5f1a}
+  @media (max-width:760px){.math-grid{grid-template-columns:1fr}.scenario-row{grid-template-columns:1fr}.team-leaders{grid-template-columns:1fr}.price-compare{grid-template-columns:1fr}}
+  @media (max-width:640px){
+    header{padding:32px 0 40px}
+    h1{font-size:24px}
+    .sub{font-size:15px}
+    section{padding:20px;margin-bottom:16px}
+    h2{font-size:18px}
+    table{font-size:13px}
+    th,td{padding:8px 6px}
+    .hero-img{height:230px;margin:-20px -20px 18px}
+    .gallery img{height:150px}
+    .price-band{font-size:24px}
+  }
+  @media print{
+    body{background:#fff}
+    section{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid}
+    header{background:#0a2540 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+  footer{background:#0a2540;color:#a8b3c2;padding:32px 0;text-align:center;font-size:13px;border-top:4px solid #b8985a}
+  footer .wrap p{margin-bottom:6px}
+  footer strong{color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Broker Opinion of Value &middot; Confidential</div>
+    <h1>631-637 W 6th Street</h1>
+    <div class="sub">San Pedro, CA 90731 &middot; &plusmn;13,799 SF Raw-Land Development Assemblage &middot; Two Parcels</div>
+    <div class="meta">
+      <div><strong>Price Guidance</strong>$1,500,000 &ndash; $1,950,000 <span style="font-weight:400">(preliminary)</span></div>
+      <div><strong>Zoning</strong>C2-2D-CPIO</div>
+      <div><strong>Use Case</strong>Two By-Right Pathways</div>
+      <div><strong>APNs</strong>7451036006 &amp; 7451036007</div>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+<section>
+  <h2>Executive Summary</h2>
+  <p>The <strong>LA Apartment Advisors (LAAA) Team</strong> at Marcus &amp; Millichap is pleased to present <strong>631-637 W 6th Street</strong> &mdash; a &plusmn;13,799-square-foot raw-land development assemblage of <strong>two contiguous parcels</strong> in the heart of Central San Pedro. Previously advanced under an entitled 39-unit mixed-use plan, the site is now offered and priced <strong>as raw land</strong>, positioned around <strong>two clean, by-right development pathways</strong> &mdash; neither of which requires discretionary entitlement or a public hearing.</p>
+  <p>Both parcels carry <strong>C2-2D-CPIO</strong> zoning and a <strong>Community Commercial</strong> General Plan designation, sit within a federal <strong>Qualified Opportunity Zone</strong>, a <strong>Transit Oriented Communities (TOC) Tier 2</strong> area, and an <strong>AB 2097</strong> half-mile transit zone (no minimum parking required). The location is walkable Central San Pedro &mdash; minutes from the 42-acre <strong>West Harbor</strong> waterfront destination opening through 2026.</p>
+  <div class="takeaways">
+    <div class="tk">
+      <div class="tk-num">FINDING 01</div>
+      <div class="tk-text"><strong>Two by-right pathways, zero entitlement risk.</strong> The site supports either a double-duplex + ADU income build or an SB 1123 ministerial for-sale subdivision &mdash; both by-right, no CUP, no discretionary review.</div>
+    </div>
+    <div class="tk">
+      <div class="tk-num">FINDING 02</div>
+      <div class="tk-text"><strong>Two separate parcels &mdash; buy together or individually.</strong> 631 W 6th (&plusmn;8,798 SF) and 637 W 6th (&plusmn;5,001 SF) can be acquired as one assemblage or split, widening the buyer pool across capital sizes.</div>
+    </div>
+    <div class="tk">
+      <div class="tk-num">FINDING 03</div>
+      <div class="tk-text"><strong>On-corridor sales validate the trade area.</strong> 646-652 W 6th St ($1.70M) sits on the same block and 302-314 N Pacific Ave ($2.80M) is blocks away &mdash; capital is actively pricing San Pedro infill development land.</div>
+    </div>
+    <div class="tk">
+      <div class="tk-num">FINDING 04</div>
+      <div class="tk-text"><strong>A stacked incentive profile.</strong> Qualified Opportunity Zone (federal tax deferral), TOC Tier 2, AB 2097 (no parking minimums) and AB 2334 (very-low-VMT) together lift feasibility on both development pathways.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="hero-img" style="background-image:url('images/hero_aerial.jpg')"></div>
+  <h2>Subject Property &mdash; Two Parcels</h2>
+  <p>631-637 W 6th Street is a raw-land assemblage of two contiguous, separately-conveyable parcels on the south side of West 6th Street between S Gaffey Street and S Grand Avenue in Central San Pedro. Combined, the site totals <strong>&plusmn;13,798.7 SF (0.317 acre)</strong>. Both parcels are improved with older structures today; the opportunity is offered, analyzed and priced as a <strong>raw-land development site</strong>.</p>
+
+  <h3>Parcel 1 &mdash; 631 W 6th Street</h3>
+  <div class="specs-grid">
+    <div class="spec"><div class="spec-label">Lot Size</div><div class="spec-value">&plusmn;8,798 SF<br><span style="font-weight:400;font-size:13px;color:#666">&plusmn;0.202 acres</span></div></div>
+    <div class="spec"><div class="spec-label">APN</div><div class="spec-value">7451-036-007</div></div>
+    <div class="spec"><div class="spec-label">Legal</div><div class="spec-value">Lot 11, Block 8<br><span style="font-weight:400;font-size:13px;color:#666">Arcadia Park Tract</span></div></div>
+    <div class="spec"><div class="spec-label">Zoning</div><div class="spec-value">C2-2D-CPIO<br><span style="font-weight:400;font-size:13px;color:#666">Community Commercial</span></div></div>
+    <div class="spec"><div class="spec-label">Existing Use</div><div class="spec-value">Single-Family Residence<br><span style="font-weight:400;font-size:13px;color:#666">&plusmn;2,730 SF / 4BR / 1938</span></div></div>
+    <div class="spec"><div class="spec-label">Housing Element</div><div class="spec-value">Designated Site<br><span style="font-weight:400;font-size:13px;color:#666">ZI-2535 ministerial approval</span></div></div>
+  </div>
+
+  <h3>Parcel 2 &mdash; 637 W 6th Street <span style="text-transform:none;font-weight:400;color:#888;font-size:13px">(also addressed 639 W 6th St)</span></h3>
+  <div class="specs-grid">
+    <div class="spec"><div class="spec-label">Lot Size</div><div class="spec-value">&plusmn;5,001 SF<br><span style="font-weight:400;font-size:13px;color:#666">&plusmn;0.115 acres</span></div></div>
+    <div class="spec"><div class="spec-label">APN</div><div class="spec-value">7451-036-006</div></div>
+    <div class="spec"><div class="spec-label">Legal</div><div class="spec-value">Lot 10, Block 8<br><span style="font-weight:400;font-size:13px;color:#666">Arcadia Park Tract</span></div></div>
+    <div class="spec"><div class="spec-label">Zoning</div><div class="spec-value">C2-2D-CPIO<br><span style="font-weight:400;font-size:13px;color:#666">Community Commercial</span></div></div>
+    <div class="spec"><div class="spec-label">Existing Use</div><div class="spec-value">Store + Residential<br><span style="font-weight:400;font-size:13px;color:#666">&plusmn;1,140 SF retail + &plusmn;760 SF res</span></div></div>
+    <div class="spec"><div class="spec-label">Combined Assemblage</div><div class="spec-value">&plusmn;13,799 SF<br><span style="font-weight:400;font-size:13px;color:#666">0.317 ac / both parcels</span></div></div>
+  </div>
+
+  <h3>Property Highlights</h3>
+  <ul>
+    <li><strong>Two by-right development pathways</strong> &mdash; a double-duplex + ADU income build, or an SB 1123 ministerial for-sale subdivision (detailed below). Neither requires a zone change or discretionary entitlement.</li>
+    <li><strong>C2-2D-CPIO commercial zoning that permits multifamily residential</strong> &mdash; the prior 39-unit project advanced on a by-right basis, and the General Plan designates the site Community Commercial.</li>
+    <li><strong>Qualified Opportunity Zone</strong> &mdash; federal capital-gains deferral / exclusion for qualifying development capital.</li>
+    <li><strong>TOC Tier 2 + AB 2097</strong> &mdash; within a half-mile of a major transit stop; no minimum parking is required, materially improving site efficiency on both pathways.</li>
+    <li><strong>AB 2334 very-low-VMT area</strong> and a <strong>Housing Element-designated site</strong> (631 W 6th carries ZI-2535, Prior Housing Element Sites &mdash; Ministerial Approval).</li>
+    <li><strong>Outside the Coastal Zone, outside the flood zone, no Rent Stabilization Ordinance</strong> on the land &mdash; a clean development basis.</li>
+    <li><strong>Walkable Central San Pedro</strong> &mdash; minutes from downtown San Pedro and the 42-acre West Harbor waterfront destination opening through 2026.</li>
+    <li><strong>Held in common ownership</strong> &mdash; both parcels last traded together on 12/02/2020 for $1,550,000.</li>
+  </ul>
+
+  <div class="gallery">
+    <figure><img src="images/map_local.jpg" alt="Local map of 631-637 W 6th Street, San Pedro"><figcaption>Local Map</figcaption></figure>
+    <figure><img src="images/map_regional.jpg" alt="Regional map, San Pedro / South Bay"><figcaption>Regional Map</figcaption></figure>
+    <figure><img src="images/map_retailer.jpg" alt="Retailer map surrounding the subject"><figcaption>Retailer Map</figcaption></figure>
+  </div>
+  <p class="footer-note">Parcel data per City of Los Angeles Department of City Planning Parcel Profile Reports (APNs 7451036006 &amp; 7451036007, dated 5/19/2026) and the prior Offering Memorandum. Maps reproduced from the prior Offering Memorandum. Buyer to independently verify all parcel data, square footage and entitlement pathways.</p>
+</section>
+
+<section>
+  <div class="section-tag">The Opportunity</div>
+  <h2>Two By-Right Development Pathways</h2>
+  <p>The repositioning offers a buyer a choice of <strong>two streamlined, by-right development programs</strong> on the raw land &mdash; one an income build, one a for-sale subdivision. Both avoid discretionary entitlement, public hearings and CEQA review, removing the single largest source of timing and approval risk in Los Angeles infill development.</p>
+  <p class="footer-note" style="margin-bottom:18px">Note: the seller previously advanced a 39-unit mixed-use plan on the assemblage to roughly 98% of approvals. Those plans may be made available to a buyer as added optionality &mdash; but the site is offered, analyzed and priced here strictly as raw land.</p>
+
+  <span class="pathway-tag">Pathway A</span>
+  <h3 style="margin-top:4px">Double Duplex + ADUs &mdash; Income Build</h3>
+  <p>A modest, fast-to-build income program: a <strong>double-duplex structure (two duplexes)</strong> plus <strong>accessory dwelling units</strong> on <em>each</em> of the two parcels &mdash; i.e. <strong>two double-duplex projects</strong> across the assemblage. Duplex and ADU construction is by-right residential under the C2 multifamily density and California's ministerial ADU statutes; the product is a small, rentable income asset with low vertical complexity (wood-frame, surface parking, no podium, no elevator).</p>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Parcel</th><th>Lot SF</th><th>Concept</th><th>Primary Units</th><th>ADUs</th><th>Total Units</th><th>Avg Unit SF</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>631 W 6th St</strong></td>
+        <td>&plusmn;8,798</td>
+        <td>One double-duplex + ADUs</td>
+        <td>4 <span class="footer-note" style="font-style:normal">(two duplexes)</span></td>
+        <td><span class="tbd">TBD &mdash; listing team</span></td>
+        <td><span class="tbd">TBD</span></td>
+        <td><span class="tbd">TBD</span></td>
+      </tr>
+      <tr>
+        <td><strong>637 W 6th St</strong></td>
+        <td>&plusmn;5,001</td>
+        <td>One double-duplex + ADUs</td>
+        <td>4 <span class="footer-note" style="font-style:normal">(two duplexes)</span></td>
+        <td><span class="tbd">TBD &mdash; listing team</span></td>
+        <td><span class="tbd">TBD</span></td>
+        <td><span class="tbd">TBD</span></td>
+      </tr>
+      <tr style="background:#0a2540;color:#fff;font-weight:600">
+        <td>ASSEMBLAGE TOTAL</td>
+        <td>&plusmn;13,799</td>
+        <td>Two double-duplex projects</td>
+        <td>8</td>
+        <td>+ ADUs</td>
+        <td>8 + ADUs</td>
+        <td>&mdash;</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="needs-input"><strong>&#9873; Input needed from the listing team:</strong> confirmed ADU count per parcel, unit sizes (SF), bedroom mix and configuration for the double-duplex program. Underwriting in the Project Math section is built to populate from these figures.</div>
+
+  <span class="pathway-tag b" style="margin-top:8px">Pathway B</span>
+  <h3 style="margin-top:4px">SB 1123 For-Sale Subdivision</h3>
+  <p>The <strong>Starter Home Revitalization Act</strong> &mdash; codified by SB 684 (2023) and substantially expanded by <strong>SB 1123 (Chapter 294, Statutes of 2024, effective July 1, 2025)</strong> &mdash; establishes a <strong>ministerial</strong> approval process for subdivisions of <strong>10 or fewer residential lots and 10 or fewer for-sale housing units</strong> on urban lots under 5 acres that allow multifamily residential. It delivers fee-simple, individually-saleable homes without a public hearing, without CEQA, and with a 60-day local approval clock.</p>
+
+  <div class="sb-callout">
+    <h3>Why 631-637 W 6th Street Qualifies</h3>
+    <p><strong>1. Multifamily residential is an allowed use.</strong> The C2-2D-CPIO base zone permits multifamily residential &mdash; the basis on which the prior 39-unit project advanced. Per HCD's January 28, 2025 Letter of Technical Assistance, <em>"zoned for" means any zone that allows multifamily residential development as a principally or conditionally permitted use; the development does not have to be in a zone exclusively designated multifamily.</em></p>
+    <p><strong>2. Well under the size cap.</strong> The combined &plusmn;0.317-acre assemblage is far below SB 1123's 5-acre eligibility ceiling &mdash; and each parcel independently qualifies.</p>
+    <p><strong>3. A Housing Element-designated infill site.</strong> Both parcels are designated Housing Element Sites; 631 W 6th additionally carries ZI-2535, Prior Housing Element Sites &mdash; Ministerial Approval. The site is surrounded by qualified urban uses across Central San Pedro.</p>
+    <p><strong>4. Ministerial &mdash; no discretionary review.</strong> Eligible applications are not subject to a public hearing and must be approved or denied within <strong>60 days</strong> of a complete submittal.</p>
+  </div>
+
+  <h3>SB 1123 Project Envelope</h3>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Parameter</th><th>SB 1123 Requirement</th><th>631-637 W 6th Yield</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Max lots / units</td><td>10 lots &amp; 10 units (excl. ADUs / JADUs)</td><td><strong>Up to 10 fee-simple for-sale units</strong></td></tr>
+      <tr><td>Min lot size (multifamily zone)</td><td>600 SF per lot</td><td>Comfortably met &mdash; &plusmn;13,799 SF assemblage</td></tr>
+      <tr><td>Ownership structure</td><td>Fee simple OR condo / co-op / CLT / TIC</td><td>Fee-simple small-lot subdivision</td></tr>
+      <tr><td>Avg unit floor area cap</td><td>&le; 1,750 net habitable SF per unit</td><td><span class="tbd">TBD &mdash; listing team</span></td></tr>
+      <tr><td>Min density (non-Housing-Element)</td><td>Greater of 66% of zoned max OR 20 du/ac</td><td>20 du/ac &times; 0.317 ac &rarr; 7-unit floor</td></tr>
+      <tr><td>Final unit count / sizes / mix</td><td>Set by the development program</td><td><span class="tbd">TBD &mdash; listing team</span></td></tr>
+      <tr><td>Approval timeline</td><td>60 days after complete submittal</td><td>Ministerial &mdash; no CUP, no hearing</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="footer-note">Source: Gov. Code &sect;&sect; 65852.28, 65913.4.5, 66499.41 (Starter Home Revitalization Act / SB 684 / SB 1123); HCD Letter of Technical Assistance dated 1/28/2025. SB 1123 eligibility analysis is informational and does not constitute a legal opinion; buyer to confirm with qualified land-use counsel.</p>
+  <div class="needs-input"><strong>&#9873; Input needed from the listing team:</strong> the planned SB 1123 program &mdash; final for-sale unit count, unit sizes and bedroom mix &mdash; to complete the for-sale exit underwriting below.</div>
+</section>
+
+<section>
+  <h2>Comparable Sales &amp; Market Pricing</h2>
+  <p>Pricing is framed against three comp sets: <strong>development-land sales</strong> (what the raw land is worth), <strong>for-sale resale comps</strong> (the Pathway B exit), and the <strong>rental-income basis</strong> (the Pathway A exit). Active listings are drawn from public sources and cited; closed sales from the prior Offering Memorandum are noted, with additional closed comparables to be confirmed by the listing team.</p>
+
+  <h3>Development-Land Sale Comparables</h3>
+  <div id="comp-map"></div>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th style="min-width:44px">Map</th><th>Address</th><th>Lot SF</th><th>Price</th><th>$/Land SF</th><th>Plans / Status</th><th>Date</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#fff7e6">
+        <td><span style="display:inline-block;width:26px;height:26px;background:#b8985a;color:#0a2540;border:2px solid #0a2540;border-radius:50%;text-align:center;font-weight:700;font-size:13px;line-height:22px">&#9733;</span></td>
+        <td><strong>631-637 W 6th St</strong><br><span class="footer-note">San Pedro 90731 &middot; Subject &middot; two parcels</span></td>
+        <td>13,799</td>
+        <td>See pricing</td>
+        <td class="psf">&mdash;</td>
+        <td>Raw land &middot; two by-right pathways</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td><span style="display:inline-block;width:26px;height:26px;background:#0a2540;color:#fff;border-radius:50%;text-align:center;font-weight:700;font-size:13px;line-height:26px">A</span></td>
+        <td><strong><a href="https://www.loopnet.com/Listing/646-652-W-6th-St-San-Pedro-CA/33904565/" target="_blank" rel="noopener" style="color:#0a2540;text-decoration:underline">646-652 W 6th St</a></strong><br><span class="footer-note">San Pedro 90731 &middot; <strong>same block as subject</strong> &middot; <a href="https://www.loopnet.com/Listing/646-652-W-6th-St-San-Pedro-CA/33904565/" target="_blank" rel="noopener" style="color:#0a4a8a">LoopNet &rarr;</a></span></td>
+        <td>10,001</td>
+        <td>$1,700,000</td>
+        <td class="psf">$170</td>
+        <td>27-unit mixed-use plan, &plusmn;50% permitted</td>
+        <td><span class="badge b-active">Active</span></td>
+      </tr>
+      <tr>
+        <td><span style="display:inline-block;width:26px;height:26px;background:#0a2540;color:#fff;border-radius:50%;text-align:center;font-weight:700;font-size:13px;line-height:26px">B</span></td>
+        <td><strong><a href="https://www.marcusmillichap.com/properties/184971/302-n-pacific-avenue" target="_blank" rel="noopener" style="color:#0a2540;text-decoration:underline">302-314 N Pacific Ave</a></strong><br><span class="footer-note">San Pedro 90731 &middot; ~0.4 mi from subject &middot; <a href="https://www.marcusmillichap.com/properties/184971/302-n-pacific-avenue" target="_blank" rel="noopener" style="color:#0a4a8a">Listing &rarr;</a></span></td>
+        <td>10,424</td>
+        <td>$2,800,000</td>
+        <td class="psf">$269</td>
+        <td>26-unit mixed-use, 100% RTI plans</td>
+        <td><span class="badge b-active">Active</span></td>
+      </tr>
+      <tr>
+        <td><span style="display:inline-block;width:26px;height:26px;background:#0a2540;color:#fff;border-radius:50%;text-align:center;font-weight:700;font-size:13px;line-height:26px">C</span></td>
+        <td><strong>101 S Harbor Blvd</strong><br><span class="footer-note">San Pedro 90731 &middot; LARD1.5 &middot; per prior Offering Memorandum</span></td>
+        <td>12,632</td>
+        <td>$2,250,000</td>
+        <td class="psf">$178</td>
+        <td>Development land</td>
+        <td><span class="badge b-closed">Closed</span> 5/29/2025</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><span class="tbd">Additional closed land comps &mdash; listing team to supply</span></td>
+        <td><span class="tbd">TBD</span></td>
+        <td><span class="tbd">TBD</span></td>
+        <td><span class="tbd">TBD</span></td>
+        <td><span class="badge b-closed">Closed</span></td>
+        <td><span class="tbd">TBD</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="footer-note"><strong>Read on the comps:</strong> the two on-market comparables ($170 and $269 / land SF) both carry advanced or RTI development plans &mdash; plan value the subject raw land does not. The lone closed comp from the prior OM, 101 S Harbor Blvd, traded at $178/land SF. As un-entitled raw land &mdash; partly offset by two clean by-right pathways and the QOZ / TOC incentive stack &mdash; the subject is positioned <strong>below</strong> the permitted-site range. Map locations are approximate; the table carries the precise data. Closed-sale comparables to be confirmed by the listing team.</p>
+
+  <h3>For-Sale Resale Comparables &mdash; Pathway B Exit</h3>
+  <p>New-construction for-sale product in San Pedro &mdash; the exit benchmark for an SB 1123 subdivision.</p>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Address</th><th>Beds / Baths</th><th>Living SF</th><th>Price</th><th>$/SF</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong><a href="https://www.redfin.com/CA/San-Pedro/1823-S-Mesa-St-90731/home/171165494" target="_blank" rel="noopener" style="color:#0a2540;text-decoration:underline">1823 S Mesa St</a></strong><br><span class="footer-note">San Pedro 90731 &middot; 22 @ Portside community, 3-story, rooftop deck</span></td>
+        <td>3BR / 2.5BA</td>
+        <td>1,942</td>
+        <td>$935,000</td>
+        <td class="psf">$481</td>
+        <td><span class="badge b-active">Active</span></td>
+      </tr>
+      <tr>
+        <td><strong><a href="https://www.redfin.com/CA/San-Pedro/1450-Sea-Ln-90732/home/188126759" target="_blank" rel="noopener" style="color:#0a2540;text-decoration:underline">1450 Sea Ln</a></strong><br><span class="footer-note">San Pedro 90732 &middot; new-construction townhome, paid solar + 2 EV chargers</span></td>
+        <td>4BR / 3.5BA</td>
+        <td>1,828</td>
+        <td>$944,000</td>
+        <td class="psf">$516</td>
+        <td><span class="badge b-active">Active</span></td>
+      </tr>
+      <tr>
+        <td><span class="tbd">Closed new-construction comps &mdash; listing team to supply</span></td>
+        <td><span class="tbd">TBD</span></td>
+        <td><span class="tbd">TBD</span></td>
+        <td><span class="tbd">TBD</span></td>
+        <td><span class="tbd">TBD</span></td>
+        <td><span class="badge b-closed">Closed</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="footer-note"><strong>Market context:</strong> the 90731 median listing price is approximately $781,723, with new-construction product generally ranging $865,000&ndash;$985,000 (Homes.com / Redfin, San Pedro, May 2026). Active comps above show new-construction for-sale product trading at roughly <strong>$480&ndash;$520 / SF</strong>. Closed comparables to be confirmed by the listing team.</p>
+
+  <h3>Rental-Income Basis &mdash; Pathway A Exit</h3>
+  <p>San Pedro rent comparables from the prior Offering Memorandum rent survey &mdash; the income benchmark for the double-duplex + ADU build.</p>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Address</th><th>1BR &mdash; SF</th><th>1BR Rent</th><th>2BR &mdash; SF</th><th>2BR Rent</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>511 S Harbor Blvd</strong><br><span class="footer-note">San Pedro 90731</span></td><td>650</td><td>$3,050 / mo</td><td>1,009</td><td>$4,663 / mo</td></tr>
+      <tr><td><strong>255 W 5th St</strong><br><span class="footer-note">San Pedro 90731</span></td><td>708</td><td>$2,645 / mo</td><td>1,045</td><td>$3,525 / mo</td></tr>
+      <tr><td><strong>550 S Palos Verdes St</strong><br><span class="footer-note">San Pedro 90731</span></td><td>746</td><td>$2,685 / mo</td><td>1,258</td><td>$3,772 / mo</td></tr>
+      <tr style="background:#0a2540;color:#fff;font-weight:600"><td>AVERAGE</td><td>701</td><td>$2,793 / mo</td><td>1,104</td><td>$3,987 / mo</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="footer-note">Source: prior Offering Memorandum rent survey (Lease Comparables, p.21). 2BR rents average <strong>$3,987 / mo</strong> (&plusmn;$3.61 / SF / mo) &mdash; the relevant basis for family-sized duplex units. Rents to be re-verified by the listing team against current market.</p>
+
+  <h3>Neighborhood Income-Property Sales <span style="text-transform:none;font-weight:400;color:#888;font-size:13px">(context only &mdash; existing stock)</span></h3>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>Address</th><th>Config</th><th>Building SF</th><th>Price</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>628 W 22nd St</strong><br><span class="footer-note">San Pedro 90731</span></td><td>Duplex / 7BR total</td><td>3,115</td><td>$1,149,000</td><td>Waterfront-area duplex</td></tr>
+      <tr><td><strong>440 W 22nd St</strong><br><span class="footer-note">San Pedro 90731</span></td><td>Duplex / 6BR total</td><td>3,032</td><td>$1,100,000</td><td>Point Fermin duplex</td></tr>
+      <tr><td><strong>528-530 W 19th St</strong><br><span class="footer-note">San Pedro 90731</span></td><td>Duplex</td><td>&plusmn;1,342</td><td>$699,000</td><td>1920s Spanish-style duplex</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="footer-note">Active listings, San Pedro 90731 (Homes.com / Zillow, May 2026) &mdash; <a href="https://www.homes.com/san-pedro-ca/90731/multi-family-homes-for-sale/" target="_blank" rel="noopener" style="color:#0a4a8a">source &rarr;</a>. Shown as neighborhood context for the small income-property market; these are existing/older structures, not new-construction comparables. New-construction 2-4 unit + ADU sale comps to be confirmed by the listing team.</p>
+</section>
+
+<section>
+  <div class="section-tag">Project Math</div>
+  <h2>Pathway Underwriting Framework</h2>
+  <p>The two pathways are underwritten on the comp evidence above. Pricing inputs &mdash; for-sale $/SF and rental $/SF &mdash; are drawn from the comp sets and shown below; the program-dependent totals (gross sellout, NOI, profit) populate once the listing team confirms the buildable program for each pathway.</p>
+
+  <div class="math-grid">
+
+    <div class="math-card rent">
+      <h3 style="color:#1f6b35">PATHWAY A &mdash; Double Duplex + ADUs (Income)</h3>
+      <p style="font-size:12.5px;color:#666;margin-bottom:14px">Rents benchmarked to the San Pedro rent survey above &mdash; 2BR average <strong>$3,987 / mo</strong> ($3.61 / SF / mo). New-construction product typically commands a 5&ndash;10% premium to existing stock.</p>
+      <div class="scenario-row">
+        <div class="scenario"><div class="s-label">Conservative</div><div class="s-val">$3.40/SF</div><div class="s-sub">existing-stock rents</div></div>
+        <div class="scenario" style="border:2px solid #1f6b35"><div class="s-label">Base Case</div><div class="s-val">$3.70/SF</div><div class="s-sub">new-build premium</div></div>
+        <div class="scenario"><div class="s-label">Aggressive</div><div class="s-val">$4.00/SF</div><div class="s-sub">strong absorption</div></div>
+      </div>
+      <div class="math-row"><span>Total units (8 primary + ADUs)</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row"><span>Total rentable SF</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row"><span>Gross potential rent (base)</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row"><span>Less: vacancy &amp; OpEx</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row total"><span>Stabilized NOI</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row sub"><span>Total project cost (land + construction)</span><span class="tbd">TBD</span></div>
+      <div class="math-row sub"><span>Yield-on-cost</span><span class="tbd">TBD</span></div>
+      <p class="footer-note" style="margin-top:12px">Construction basis: 2&ndash;3 story wood-frame duplex/ADU product, surface parking, no podium &mdash; the lowest-cost residential build type. Hard-cost benchmark for coastal LA small-residential: ~$300&ndash;$350 / SF; soft costs 10&ndash;15% of hard. Populates on confirmed unit count and SF.</p>
+    </div>
+
+    <div class="math-card">
+      <h3 style="color:#0a4a8a">PATHWAY B &mdash; SB 1123 For-Sale Subdivision</h3>
+      <p style="font-size:12.5px;color:#666;margin-bottom:14px">Pricing benchmarked to the San Pedro new-construction resale comps above &mdash; trading at roughly <strong>$480&ndash;$520 / SF</strong>.</p>
+      <div class="scenario-row">
+        <div class="scenario"><div class="s-label">Conservative</div><div class="s-val">$475/SF</div><div class="s-sub">below comp range</div></div>
+        <div class="scenario" style="border:2px solid #0a4a8a"><div class="s-label">Base Case</div><div class="s-val">$500/SF</div><div class="s-sub">comp-set midpoint</div></div>
+        <div class="scenario"><div class="s-label">Aggressive</div><div class="s-val">$535/SF</div><div class="s-sub">top of comp range</div></div>
+      </div>
+      <div class="math-row"><span>For-sale units (up to 10, SB 1123 cap)</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row"><span>Total saleable SF</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row"><span>Gross sellout (base $500/SF)</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row"><span>Less: construction + selling cost</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row total"><span>Residual land value</span><strong><span class="tbd">TBD</span></strong></div>
+      <div class="math-row sub"><span>Land basis per for-sale door</span><span class="tbd">TBD</span></div>
+      <div class="math-row sub"><span>Developer profit margin</span><span class="tbd">TBD</span></div>
+      <p class="footer-note" style="margin-top:12px">Construction basis: fee-simple small-lot homes/townhomes, 2&ndash;3 story wood-frame, no elevator. Hard-cost benchmark for coastal LA: ~$275&ndash;$320 / SF; soft costs 8&ndash;15% of hard; selling cost ~5% of sellout. Populates on confirmed unit count and SF.</p>
+    </div>
+
+  </div>
+  <div class="needs-input"><strong>&#9873; To complete this section:</strong> the listing team's confirmed buildable program for each pathway (unit counts, unit SF, ADU count, bedroom mix). The framework above &mdash; comp-derived pricing scenarios and the cost-stack methodology &mdash; is built to populate directly from those inputs into a full P&amp;L for each exit.</div>
+</section>
+
+<section>
+  <div class="section-tag">Broker Opinion of Value</div>
+  <h2>Pricing Recommendation</h2>
+  <p>As raw land, value is land-driven. The development-land comp set brackets San Pedro infill land between <strong>$170 and $269 / land SF</strong> for sites carrying advanced or RTI plans, with the lone closed comp (101 S Harbor Blvd) at <strong>$178 / land SF</strong>. The subject is <strong>un-entitled raw land</strong> &mdash; it should price <em>below</em> the permitted-site range, with its two clean by-right pathways and the QOZ / TOC incentive stack providing downside support.</p>
+
+  <h3>Comp-Indicated Land Value &mdash; Subject &plusmn;13,799 SF</h3>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr><th>$/Land SF Applied</th><th>Indicated Value (&times; 13,799 SF)</th><th>Positioning</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>$109 / SF</td><td>$1,500,000</td><td>Conservative &mdash; raw-land floor</td></tr>
+      <tr><td>$125 / SF</td><td>$1,725,000</td><td>Midpoint of recommended band</td></tr>
+      <tr><td>$141 / SF</td><td>$1,950,000</td><td>Upper &mdash; below the $170+ permitted comps</td></tr>
+      <tr style="background:#fafbfc"><td>$130 / SF</td><td>$1,800,000</td><td>Prior entitled 39-unit ask, for reference</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="recommend">
+    <h3>Recommended List Price Band &mdash; Preliminary</h3>
+    <div class="price-band">$1,500,000 &ndash; $1,950,000</div>
+    <div class="price-band-sub">&plusmn;$109&ndash;$141 / land SF &middot; &plusmn;13,799 SF raw-land assemblage &middot; available together or as two parcels</div>
+    <div class="price-compare">
+      <div class="price-current">
+        <div class="pc-label">Prior Position</div>
+        <div class="pc-value">$1,800,000</div>
+        <div class="pc-sub">2025 OM ask &mdash; entitled 39-unit mixed-use plan (withdrawn; now offered as raw land)</div>
+      </div>
+      <div class="price-rec">
+        <div class="pc-label">Recommended &mdash; Raw Land</div>
+        <div class="pc-value">$1.50M &ndash; $1.95M</div>
+        <div class="pc-sub">Comp-indicated band; final list price to be set with the listing team</div>
+      </div>
+    </div>
+    <p style="margin-top:14px;margin-bottom:0;font-size:14px"><strong>Rationale:</strong> the band is anchored to development-land comp evidence applied to the &plusmn;13,799 SF assemblage, discounted from the $170&ndash;$269 / SF permitted-site range to reflect the absence of approved plans. The two by-right pathways and the Opportunity Zone / TOC Tier 2 / AB 2097 incentive stack support the upper half of the range. A pricing strategy that surfaces both pathways &mdash; and the option to buy the parcels together or individually &mdash; should broaden the buyer pool and support execution toward the top of the band.</p>
+  </div>
+  <div class="needs-input"><strong>&#9873; To finalize the recommendation:</strong> (1) closed raw-land sale comparables from the listing team, to confirm the $/land SF anchor; and (2) the confirmed buildable program, to cross-check the band against the residual land value of each pathway in the Project Math section. The band above is <strong>preliminary</strong> pending those two inputs.</div>
+</section>
+
+<section>
+  <h2>Market Overview &mdash; San Pedro</h2>
+  <p>San Pedro is a historic waterfront community within the South Bay / Harbor region of the City of Los Angeles, anchored by the <strong>Port of Los Angeles</strong> &mdash; the busiest container port in the United States for more than two decades. Downtown San Pedro has undergone sustained revitalization, and the subject sits in its walkable Central core.</p>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-num">1.18M</div><div class="stat-lbl">Population<br>(5-mile)</div></div>
+    <div class="stat-box"><div class="stat-num">$81K</div><div class="stat-lbl">Avg Household<br>Income (5-mile)</div></div>
+    <div class="stat-box"><div class="stat-num">6.7M</div><div class="stat-lbl">Port of LA<br>TEUs / Year</div></div>
+    <div class="stat-box"><div class="stat-num">42 ac</div><div class="stat-lbl">West Harbor<br>(opening 2026)</div></div>
+  </div>
+
+  <h3>Demand Drivers</h3>
+  <ul>
+    <li><strong>West Harbor</strong> &mdash; a 42-acre waterfront dining, retail and entertainment destination on the former Ports O' Call site, activating since October 2025 toward a 2026 grand opening, anchored by a 6,200-seat waterfront amphitheater and a 175-foot Ferris wheel.</li>
+    <li><strong>Port of Los Angeles</strong> &mdash; America's premier container gateway, handling roughly 6.7 million TEUs annually (about 17% of all U.S. containerized trade) and supporting over 1.4 million U.S. jobs.</li>
+    <li><strong>Coastal South Bay location</strong> &mdash; direct access to the 110 Freeway, the World Cruise Center, and the broader South Bay employment base.</li>
+    <li><strong>Sustained downtown revitalization</strong> &mdash; shops, restaurants, galleries and entertainment across a walkable Central San Pedro core, with the 2028 Olympics a regional infrastructure catalyst.</li>
+  </ul>
+  <p class="footer-note">Demographics and Port data per the prior Offering Memorandum (Marcus &amp; Millichap Research Services). West Harbor detail per <a href="https://www.westharborla.com/" target="_blank" rel="noopener" style="color:#0a4a8a">westharborla.com</a>.</p>
+</section>
+
+<section>
+  <div class="section-tag">LAAA Inventory</div>
+  <h2>LAAA Land &amp; Development Pipeline</h2>
+  <p>The LA Apartment Advisors Team maintains one of the most active land &amp; development listing practices in Los Angeles &mdash; spanning by-right infill sites, entitled and RTI projects, and Opportunity Zone development land across the region. 631-637 W 6th Street joins that pipeline as a rare two-pathway, two-parcel raw-land offering.</p>
+  <div class="needs-input"><strong>&#9873; Input needed from the listing team:</strong> the current LAAA land &amp; development inventory list (properties, neighborhoods, lot sizes, buildable units, pricing) to populate a comparison table here. The full active inventory is maintained at laaa.com.</div>
+  <div class="laaa-cta">
+    <a href="https://www.laaa.com" target="_blank" rel="noopener" style="display:inline-block;background:#0a2540;color:#fff;text-decoration:none;padding:12px 28px;border-radius:4px;font-weight:600;font-size:14px;letter-spacing:0.5px">View Full Inventory at LAAA.com &rarr;</a>
+    <div style="font-size:13px;color:#666;margin-top:10px">Inventory updated continuously &middot; <a href="https://www.laaa.com" target="_blank" rel="noopener" style="color:#0a4a8a">www.laaa.com</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-tag">Exclusively Listed By</div>
+  <h2>The LAAA Team</h2>
+  <p>This offering is exclusively listed by the <strong>LA Apartment Advisors (LAAA) Team</strong> at Marcus &amp; Millichap &mdash; one of Southern California's most active multifamily and development-land investment sales practices.</p>
+
+  <h3 style="margin-top:24px">LAAA Team &mdash; Track Record</h3>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-num">$1.4B+</div><div class="stat-lbl">Closed Sales Volume</div></div>
+    <div class="stat-box"><div class="stat-num">450+</div><div class="stat-lbl">Closed Transactions</div></div>
+    <div class="stat-box"><div class="stat-num">40+</div><div class="stat-lbl">Deals Closed<br>Per Year</div></div>
+    <div class="stat-box"><div class="stat-num">#1</div><div class="stat-lbl">LA County Multifamily<br>(Trailing 3 Years)</div></div>
+  </div>
+
+  <div class="team-leaders">
+    <div class="team-card">
+      <div class="tc-photo"><img class="headshot-img-lg" src="images/headshot_filip.png" alt="Filip Niculete"></div>
+      <div class="tc-name-lg">Filip Niculete</div>
+      <div class="tc-title-lg">Senior Managing Director, Investments</div>
+      <p class="tc-bio">Co-founder of the LAAA Team at Marcus &amp; Millichap. Born in Romania and raised in the San Fernando Valley, Filip began his M&amp;M career in 2011 after studying Finance at San Diego State University. He and the LAAA Team have closed over $1.4 billion in multifamily and land transactions across Los Angeles.</p>
+      <div class="tc-contact-lg">
+        <a href="tel:+18182122748" style="font-size:18px;font-weight:700;color:#0a2540;display:block;margin-bottom:6px">(818) 212-2748</a>
+        <a href="mailto:Filip.Niculete@marcusmillichap.com">Filip.Niculete@marcusmillichap.com</a><br>
+        <span style="color:#666;font-size:12px">CalDRE #01905352</span><br>
+        <a href="https://www.laaa.com" target="_blank" rel="noopener" style="color:#b8985a;font-size:12px;font-weight:600">www.laaa.com &rarr;</a>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="tc-photo"><img class="headshot-img-lg" src="images/headshot_glen.png" alt="Glen Scher"></div>
+      <div class="tc-name-lg">Glen Scher</div>
+      <div class="tc-title-lg">Senior Managing Director, Investments</div>
+      <p class="tc-bio">Co-founder of the LAAA Team at Marcus &amp; Millichap. UC Santa Barbara graduate in Economics and former Division I golfer (Big West Golfer of the Year, UCSB Male Athlete of the Year). Glen launched at M&amp;M in 2014 and was named SFV Business Journal Rookie of the Year by 2016. He has closed 450+ transactions and $1.4B in volume across LA and Ventura / Santa Barbara counties.</p>
+      <div class="tc-contact-lg">
+        <a href="tel:+18182122808" style="font-size:18px;font-weight:700;color:#0a2540;display:block;margin-bottom:6px">(818) 212-2808</a>
+        <a href="mailto:Glen.Scher@marcusmillichap.com">Glen.Scher@marcusmillichap.com</a><br>
+        <span style="color:#666;font-size:12px">CalDRE #01962976</span><br>
+        <a href="https://www.laaa.com" target="_blank" rel="noopener" style="color:#b8985a;font-size:12px;font-weight:600">www.laaa.com &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Marcus &amp; Millichap</strong> &middot; 16830 Ventura Boulevard, Suite 100, Encino, CA 91436 &middot; 818.212.2700</p>
+    <p>Activity ID #ZAG0120493 &middot; &copy; 2026 Marcus &amp; Millichap. All rights reserved.</p>
+    <p style="margin-top:12px;font-size:11px;max-width:820px;margin-left:auto;margin-right:auto;line-height:1.5">This is a Broker Price Opinion or Comparative Market Analysis of value and should not be considered an appraisal. The information contained herein has been secured from sources we believe to be reliable, but no representations or warranties, express or implied, are made as to its accuracy. References to square footage, age, zoning, and entitlement pathway are approximate; buyer must independently verify all information and bears all responsibility for any inaccuracies. The SB 1123 eligibility analysis is informational, is based on the cited statutes and HCD guidance, and does not constitute a legal opinion. Pricing guidance is preliminary and subject to revision.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if (typeof L === 'undefined' || !document.getElementById('comp-map')) return;
+
+  var subject = [33.7376, -118.2895];
+  var map = L.map('comp-map', { scrollWheelZoom: false, zoomControl: true }).setView([33.7388, -118.2840], 14);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  function icon(cls, label){
+    return L.divIcon({
+      className:'',
+      html:'<div class="'+cls+'"><span class="pin-inner">'+label+'</span></div>',
+      iconSize:[36,36], iconAnchor:[18,36], popupAnchor:[0,-34]
+    });
+  }
+
+  var pts = [
+    { ll:subject, cls:'pin-subject', lbl:'&#9733;', pop:'<strong>631-637 W 6th St</strong><br>Subject &mdash; raw land, two parcels<br>&plusmn;13,799 SF' },
+    { ll:[33.7377,-118.2912], cls:'pin-comp', lbl:'A', pop:'<strong>646-652 W 6th St</strong><br>10,001 SF &middot; $1,700,000 &middot; $170/SF<br>27-unit mixed-use plan &middot; Active' },
+    { ll:[33.7418,-118.2872], cls:'pin-comp', lbl:'B', pop:'<strong>302-314 N Pacific Ave</strong><br>10,424 SF &middot; $2,800,000 &middot; $269/SF<br>26-unit, 100% RTI &middot; Active' },
+    { ll:[33.7366,-118.2735], cls:'pin-comp', lbl:'C', pop:'<strong>101 S Harbor Blvd</strong><br>12,632 SF &middot; $2,250,000 &middot; $178/SF<br>Closed 5/29/2025' }
+  ];
+
+  pts.forEach(function(p){
+    L.marker(p.ll, { icon: icon(p.cls, p.lbl) }).addTo(map).bindPopup(p.pop);
+  });
+})();
+</script>
+
+</body>
+</html>
